@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    background-color: #FFF;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.footer h1{
+    color: #a5a5ac;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.footer h1 span{
+    color: rgb(36, 20, 105);
+    font-weight: bolder;
+}
