@@ -1,4 +1,6 @@
 import React from 'react';
+import './styles.css';
+
 import { fade, makeStyles, Theme, createStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -222,7 +224,7 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar style={{backgroundColor: '#143C8D', zIndex: '10', position: 'fixed', width: '100%'}}>
+        <Toolbar className="navTop">
           <img src={logomarca} alt="Logomarca" width="150px" height="60px" className={classes.img} />
           <IconButton
             edge="start"
