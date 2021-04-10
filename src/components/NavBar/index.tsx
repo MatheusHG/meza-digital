@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { fade, makeStyles, Theme, createStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
+import Menu, { MenuProps } from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -15,8 +15,48 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import SendIcon from '@material-ui/icons/Send';
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import HealingIcon from '@material-ui/icons/Healing';
+import MoodIcon from '@material-ui/icons/Mood';
+import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 
 import logomarca from '../../assets/logomarca.png';
+
+const StyledMenu = withStyles({
+  paper: {
+    border: '1px solid #d3d4d5',
+  },
+})((props: MenuProps) => (
+  <Menu
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'center',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'center',
+    }}
+    {...props}
+  />
+));
+
+const StyledMenuItem = withStyles((theme) => ({
+  root: {
+    '&:focus': {
+      backgroundColor: theme.palette.primary.main,
+      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+        color: theme.palette.common.white,
+      },
+    },
+  },
+}))(MenuItem);
 
 const navBar = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,10 +82,7 @@ const navBar = makeStyles((theme: Theme) =>
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.9),
-      '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.6),
-      },
+      backgroundColor: fade(theme.palette.common.white, 1),
       marginRight: theme.spacing(2),
       marginLeft: 0,
       width: '100%',
@@ -101,11 +138,13 @@ const navBar = makeStyles((theme: Theme) =>
 );
 
 export default function PrimarySearchAppBar() {
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const classes = navBar();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -116,29 +155,44 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
+    <StyledMenu
+        id="customized-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <StyledMenuItem>
+          <ListItemIcon>
+            <LocalOfferIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Ofertas" />
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <ListItemIcon>
+            <HealingIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Medicamentos" />
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <ListItemIcon>
+            <MoodIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Beleza" />
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <ListItemIcon>
+            <ChildFriendlyIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Bebê e Criança" />
+        </StyledMenuItem>
+      </StyledMenu>
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -158,7 +212,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Carrinho</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -172,6 +226,10 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -182,8 +240,9 @@ export default function PrimarySearchAppBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={handleClick}
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             Categorias
@@ -207,7 +266,6 @@ export default function PrimarySearchAppBar() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
               color="inherit"
             >
               <AccountCircle />
