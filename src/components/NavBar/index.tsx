@@ -14,7 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 import logomarca from '../../assets/logomarca.png';
 
@@ -93,9 +93,6 @@ const navBar = makeStyles((theme: Theme) =>
     img: {
       marginRight: '25px',
     },
-    cartIcon: {
-      color: '#12B6DF'
-    },
     titleEntrar: {
       fontSize: '14px',
       margin: '15px 15px 15px 0'
@@ -161,7 +158,7 @@ export default function PrimarySearchAppBar() {
             <MailIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Nossas ofertas</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
@@ -169,7 +166,7 @@ export default function PrimarySearchAppBar() {
             <NotificationsIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Carrinho</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -180,7 +177,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>Conecte-se</p>
       </MenuItem>
     </Menu>
   );
@@ -227,7 +224,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
             <h2 className={classes.titleEntrar}>ENTRAR</h2>
             <IconButton aria-label="cart" color="inherit">
-              <ShoppingCartIcon className={classes.cartIcon} />
+              <ShoppingBasketIcon style={{ color: '#12B6DF' }} />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
