@@ -1,34 +1,20 @@
 import React from 'react';
 
+import './styles.css';
+import './response.css';
+
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 import CompareArrowsIcon from '@material-ui/icons/CompareArrows';
 
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    button: {
-      margin: theme.spacing(2),
-      padding: '10px 40px 10px 40px',
-      backgroundColor: '#FFF',
-      '&:hover': {
-        backgroundColor: '#F3F3F3',
-      },
-      color: '#969696'
-    },
-  }),
-);
-
 const Options: React.FC = () => {
-    const classes = useStyles();
     return (
-        <Box style={{width: '100%', textAlign: 'right'}}>
+        <Box className="boxOptions">
             <Button
                 variant="contained"
                 color="secondary"
-                className={classes.button}
+                className="buttonOption"
                 startIcon={<ViewComfyIcon />}
             >
                 Quantidade
@@ -36,7 +22,7 @@ const Options: React.FC = () => {
             <Button
                 variant="contained"
                 color="secondary"
-                className={classes.button}
+                className="buttonOption"
                 startIcon={<CompareArrowsIcon />}
             >
                 Ordernar

@@ -1,0 +1,9 @@
+@media (max-width: 650px){
+    h2{
+        font-size: 10px !important;
+    }
+
+    a, h1{
+        font-size: 12px !important;
+    }
+}

@@ -125,8 +125,7 @@ const navBar = makeStyles((theme: Theme) =>
       marginRight: '25px',
     },
     titleEntrar: {
-      fontSize: '14px',
-      margin: '15px 15px 15px 0'
+      fontSize: '15px',
     }
   }),
 );
@@ -258,9 +257,10 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle style={{marginRight: '10px'}} />
+              <h2 className={classes.titleEntrar}>ENTRAR</h2>
             </IconButton>
-            <h2 className={classes.titleEntrar}>ENTRAR</h2>
+            
             <IconButton aria-label="cart" color="inherit">
               <ShoppingBasketIcon style={{ color: '#12B6DF' }} />
             </IconButton>

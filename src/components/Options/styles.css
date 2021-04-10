@@ -1,0 +1,19 @@
+.boxOptions{
+    width: 100%;
+    text-align: right;
+}
+
+.boxOptions .buttonOption{
+    margin-top: 21px;
+    padding: 10px 40px 10px 40px;
+    background-color: #FFF;
+    color: #969696;
+}
+
+.boxOptions .buttonOption:hover{
+    background-color: #F3F3F3;
+}
+
+.boxOptions .buttonOption:nth-last-of-type(1){
+    margin-left: 15px;
+}
