@@ -2,27 +2,14 @@ import React from 'react';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import CardMedia from '@material-ui/core/CardMedia';
 
 import WomanHairbrush from '../../assets/banner2.png';
 
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-      margin: '20px 0'
-    },
-  }),
-);
+import StyledLetter from '../UseStyles/newLetter';
 
 const Newsletter: React.FC = () => {
-    const classes = useStyles();
+    const classes = StyledLetter();
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
@@ -71,7 +58,7 @@ const Newsletter: React.FC = () => {
                         <a href="/">CONHEÇA NOSSOS <strong>SHAMPOOS {'>'}</strong></a>
                     </Paper>
                     <Paper className={classes.paper}  style={{display: 'contents'}}>
-                        <img src={WomanHairbrush} alt="Woman with hairbrush" width="100%" height="100%" />
+                        <CardMedia component="img" image={WomanHairbrush} alt="Woman with hairbrush" width="100%" height="100%" />
                     </Paper>
                 </Grid>
             </Grid>

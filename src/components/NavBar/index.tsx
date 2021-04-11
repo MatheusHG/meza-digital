@@ -24,11 +24,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import logomarca from '../../assets/logomarca.png';
 
-import StyledMenu from '../Menu/menu';
-import StyledMenuItem from '../Menu/menuItem';
-import navBar from '../Menu/navBar';
+import StyledMenu from '../UseStyles/menu';
+import StyledMenuItem from '../UseStyles/menuItem';
+import navBar from '../UseStyles/navBar';
 
-export default function PrimarySearchAppBar() {
+const NavBar: React.FC = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -180,3 +180,5 @@ export default function PrimarySearchAppBar() {
     </Box>
   );
 }
+
+export default NavBar;
