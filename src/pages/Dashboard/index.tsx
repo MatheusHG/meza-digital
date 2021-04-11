@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Box from '@material-ui/core/Box';
-
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import Container from '@material-ui/core/Container';
 
 import NavBar from '../../components/NavBar/index';
 import Banner from '../../components/Banner/index';
@@ -13,12 +11,7 @@ import NewsletterTop from '../../components/Newsletter/newsletterTop';
 import NewsletterBottom from '../../components/Newsletter/newsletterBottom';
 import Footer from '../../components/Footer/index';
 
-import Container from '@material-ui/core/Container';
-
 const Dashboard: React.FC = () => {
-    useEffect(() => {
-        Aos.init({ duration: 2000 });
-    }, []);
     return (
         <Box>
             <NavBar />
