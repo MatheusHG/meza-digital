@@ -10,7 +10,7 @@ const Routes: React.FC = () => {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route path="/" exact component={Dashboard} />
+				<Route path='/' exact component={Dashboard} />
 			</Switch>
 			<ToastContainer limit={1} />
 		</BrowserRouter>

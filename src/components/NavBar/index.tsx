@@ -49,7 +49,7 @@ const NavBar: React.FC = () => {
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <StyledMenu
-        id="customized-menu"
+        id='customized-menu'
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -57,27 +57,27 @@ const NavBar: React.FC = () => {
       >
         <StyledMenuItem>
           <ListItemIcon>
-            <LocalOfferIcon fontSize="small" />
+            <LocalOfferIcon fontSize='small' />
           </ListItemIcon>
-          <ListItemText primary="Ofertas" />
+          <ListItemText primary='Ofertas' />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <HealingIcon fontSize="small" />
+            <HealingIcon fontSize='small' />
           </ListItemIcon>
-          <ListItemText primary="Medicamentos" />
+          <ListItemText primary='Medicamentos' />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <MoodIcon fontSize="small" />
+            <MoodIcon fontSize='small' />
           </ListItemIcon>
-          <ListItemText primary="Beleza" />
+          <ListItemText primary='Beleza' />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <ChildFriendlyIcon fontSize="small" />
+            <ChildFriendlyIcon fontSize='small' />
           </ListItemIcon>
-          <ListItemText primary="Bebê e Criança" />
+          <ListItemText primary='Bebê e Criança' />
         </StyledMenuItem>
       </StyledMenu>
   );
@@ -94,17 +94,17 @@ const NavBar: React.FC = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
+        <IconButton aria-label='show 11 new notifications' color='inherit'>
           <ShoppingBasketIcon style={{ color: '#12B6DF' }} />
         </IconButton>
         <p>Carrinho</p>
       </MenuItem>
       <MenuItem>
         <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+          aria-label='account of current user'
+          aria-controls='primary-search-account-menu'
+          aria-haspopup='true'
+          color='inherit'
         >
           <AccountCircle />
         </IconButton>
@@ -119,18 +119,18 @@ const NavBar: React.FC = () => {
 
   return (
     <Box className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar className="navTop">
-          <CardMedia component="img" image={logomarca} alt="Logomarca" className={classes.img} />
+      <AppBar position='static'>
+        <Toolbar className='navTop'>
+          <CardMedia component='img' image={logomarca} alt='Logomarca' className={classes.img} />
           <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
+            edge='start'
+            color='inherit'
+            aria-label='open drawer'
             onClick={handleClick}
           >
             <MenuIcon/>
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={classes.title} variant='h6' noWrap>
             Categorias
           </Typography>
           <Box className={classes.search}>
@@ -138,7 +138,7 @@ const NavBar: React.FC = () => {
               <SearchIcon />
             </Box>
             <InputBase
-              placeholder="O que você procura?"
+              placeholder='O que você procura?'
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -149,26 +149,26 @@ const NavBar: React.FC = () => {
           <Box className={classes.grow} />
           <Box className={classes.sectionDesktop}>
             <IconButton
-              aria-label="account of current user"
+              aria-label='account of current user'
               aria-controls={menuId}
-              aria-haspopup="true"
-              color="inherit"
+              aria-haspopup='true'
+              color='inherit'
             >
               <AccountCircle style={{marginRight: '10px'}} />
               <h2 className={classes.titleEntrar}>ENTRAR</h2>
             </IconButton>
             
-            <IconButton aria-label="cart" color="inherit">
+            <IconButton aria-label='cart' color='inherit'>
               <ShoppingBasketIcon style={{ color: '#12B6DF' }} />
             </IconButton>
           </Box>
           <Box className={classes.sectionMobile}>
             <IconButton
-              aria-label="show more"
+              aria-label='show more'
               aria-controls={mobileMenuId}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <MoreIcon />
             </IconButton>

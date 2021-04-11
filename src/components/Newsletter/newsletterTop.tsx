@@ -6,7 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import WomanHairbrush from '../../assets/banner2.png';
 
-import StyledLetter from '../UseStyles/newLetter';
+import StyledLetter from '../UseStyles/newsletterTop';
 
 const Newsletter: React.FC = () => {
     const classes = StyledLetter();
@@ -16,10 +16,10 @@ const Newsletter: React.FC = () => {
                 <Grid item xs={6}>
 
                     <Paper className={classes.paper}>
-                        <Grid container wrap="nowrap" spacing={2}>
+                        <Grid container wrap='nowrap' spacing={2}>
                             <h1 style={{fontSize: '23px', color: '#CD8D84', margin: '20px 10px'}}>COMO ESCOLHER O MELHOR SHAMPOO?</h1>
                         </Grid>
-                        <Grid container wrap="nowrap" spacing={2}>
+                        <Grid container wrap='nowrap' spacing={2}>
                             <h2 style={{fontSize: '18px', color: '#838383', margin: '0 10px 10px', fontWeight: 'lighter', textAlign: 'justify'}}>
                                 O cabelo pode ser oleoso, seco, misto ou quimicamente tratado. Cada caso 
                                 exige um tipo de shampoo especial. Tão importante quanto levar em conta 
@@ -34,10 +34,10 @@ const Newsletter: React.FC = () => {
                     </Paper>
 
                     <Paper className={classes.paper}>
-                        <Grid container wrap="nowrap" spacing={2}>
+                        <Grid container wrap='nowrap' spacing={2}>
                             <h1 style={{fontSize: '23px', color: '#CD8D84', margin: '20px 10px'}}>QUEDA DE CABELO NUNCA MAIS</h1>
                         </Grid>
-                        <Grid container wrap="nowrap" spacing={2}>
+                        <Grid container wrap='nowrap' spacing={2}>
                             <h2 style={{fontSize: '18px', color: '#838383', margin: '0 10px 10px', fontWeight: 'lighter', textAlign: 'justify'}}>
                                 Supreende-se com a quantidade de fios no travesseiro ao acordar, ou
                                 que ficam presos no pente ao se arrumar? Os shampoos dermocosméticos
@@ -55,10 +55,10 @@ const Newsletter: React.FC = () => {
 
                 <Grid item xs={6}  style={{width: '100%', height: '100%'}}>
                     <Paper className={classes.paper} style={{backgroundColor: '#DE8E85', fontSize: '20px', color: '#FFF', fontWeight: 100}}>
-                        <a href="/">CONHEÇA NOSSOS <strong>SHAMPOOS {'>'}</strong></a>
+                        <a href='/'>CONHEÇA NOSSOS <strong>SHAMPOOS {'>'}</strong></a>
                     </Paper>
                     <Paper className={classes.paper}  style={{display: 'contents'}}>
-                        <CardMedia component="img" image={WomanHairbrush} alt="Woman with hairbrush" width="100%" height="100%" />
+                        <CardMedia component='img' image={WomanHairbrush} alt='Woman with hairbrush' width='100%' height='100%' />
                     </Paper>
                 </Grid>
             </Grid>

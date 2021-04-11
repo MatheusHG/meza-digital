@@ -8,8 +8,8 @@ import img from '../../assets/banner.png';
 
 const Banner: React.FC = () => {
     return(
-        <Box className="banner">
-            <CardMedia component="img" image={img} alt="Banner" width="100%" height="100%" />
+        <Box className='banner'>
+            <CardMedia component='img' image={img} alt='Banner' width='100%' height='100%' />
         </Box>
     );
 };

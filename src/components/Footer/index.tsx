@@ -8,15 +8,15 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const Footer: React.FC = () => {
     return(
-        <Box className="footer">
+        <Box className='footer'>
             <h1>Desenvolvido com 💙 por 
-                <Box component="span" m={1}>Matheus Henrique</Box>
+                <Box component='span' m={1}>Matheus Henrique</Box>
             </h1>
             <Box>
-                <Link href="https://www.instagram.com/matheushgo_/" style={{marginRight: '15px'}}>
+                <Link href='https://www.instagram.com/matheushgo_/' style={{marginRight: '15px'}}>
                     <InstagramIcon color='action' />
                 </Link>
-                <Link href="https://www.linkedin.com/in/matheushgo">
+                <Link href='https://www.linkedin.com/in/matheushgo'>
                     <LinkedInIcon color='action' />
                 </Link>
             </Box>

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import './styles.css';
 import './response.css';
@@ -9,20 +12,25 @@ import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 import CompareArrowsIcon from '@material-ui/icons/CompareArrows';
 
 const Options: React.FC = () => {
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
     return (
-        <Box className="boxOptions">
+        <Box className='boxOptions'>
             <Button
-                variant="contained"
-                color="secondary"
-                className="buttonOption"
+                data-aos='zoom-in'
+                variant='contained'
+                color='secondary'
+                className='buttonOption'
                 startIcon={<ViewComfyIcon />}
             >
                 Quantidade
             </Button>
             <Button
-                variant="contained"
-                color="secondary"
-                className="buttonOption"
+                data-aos='zoom-in'
+                variant='contained'
+                color='secondary'
+                className='buttonOption'
                 startIcon={<CompareArrowsIcon />}
             >
                 Ordernar
